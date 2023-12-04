@@ -1061,7 +1061,7 @@ if(USE_ROCM)
     # needed for compat with newer versions of hip-clang that introduced C++20 mangling rules
     list(APPEND HIP_HIPCC_FLAGS -fclang-abi-compat=17)
 
-    set(HIP_CLANG_FLAGS ${HIP_CXX_FLAGS})
+    set(HIP_CLANG_FLAGS ${HIP_CXX_FLAGS} ${HIP_CPP_FLAGS})
     # Ask hcc to generate device code during compilation so we can use
     # host linker to link.
     list(APPEND HIP_CLANG_FLAGS -fno-gpu-rdc)
